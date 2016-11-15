@@ -1,0 +1,16 @@
+#jumbo {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.logos {
+    height: 10%;
+    width: 10%;
+    margin: 10px;
+}
+
+.slide {
+    background: white;
+}
+

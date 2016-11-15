@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>A Brief Intro to Git and Github</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+        <link href="css/my-styles.css" rel="stylesheet" media="screen">
+    </head>
+    
+    <body>
+        
+        <div class="container">
+            <img class="logos pull-left" src="img/git-logo.png" alt="git logo">
+            <img class="logos pull-right" src="img/github-logo.png" alt="github logo">
+        </div>
+
+        
+        <div class="jumbotron" id="jumbo">
+            <h1 id="title-text">A (very) Brief Introduction to Git and Github</h1>
+        </div>
+        
+        <div class="well well-lg slide">
+            <h2>Why should I use Git/Github?</h2>
+            <ul>
+                <li>If you need a system to manage your software project (e.g. add/subtract features in an organized fashion), Git is one of the best/most popular version control systems</li>
+                <li>If you need to collaborate with other developers on software projects, Git is a way to handle this</li>
+                <li>If you need to publicize your project and attract contributors or users, Github can help with this</li>
+            </ul>
+        </div>
+        
+         <div class="well well-lg slide">
+            <h2>What is Git/Github?</h2>
+            <p>Git:  a program that keeps track of the files in a folder as you change them.  It does this by storing snapshots of the state of folder.  These snapshots are called <mark>commits</mark>.</p>
+            <p>Github:  a "web-based Git repository hosting service".  It's a place where you can store your code, and it offers many other features aimed at facilitating software development and collaboration.</p> 
+        </div>       
+        
+        <div class="well well-lg slide">
+            <h2>Installing Git and Creating a Github Account</h2>
+            <ul>
+                <li>If you’re on Windows, you can install Git by going <a href="https://git-scm.com/download/win">here</a>.  This option will also install an emulator for the Linux command line, which I will be using to interact with Git.  Alternatively, you can use the Windows command line, or one of the many GUI’s out there.</li>
+                <li>If you’re on Linux or Mac, you should have Git already installed, or be able to install it through your package manager or other methods</li>
+                <li>Create a Github account by going to <a href="https://github.com/">github.com</a> and signing up</li>
+            </ul>
+        </div>
+        
+        <div class="well well-lg slide">
+            <h2>A Brief Tutorial</h2>
+            <ul>
+                <li>Git/Github is a big subject.  I'll only attempt to introduce a few basic commands.</li>
+                <li>The plan:  1.  Initialize a repository.  2.  Push the repository to Github.  3.  Make changes to both the local repository and the one on Github.  4.  Pull the changes from the Github repository into the local one.</li>
+            </ul>
+        </div>
+        
+         <div class="well well-lg slide">
+            <h2>Step 1:  Initialize a Repository</h2>
+            <p>Running <code>git init</code> in your project folder creates another folder named ".git".  This folder contains all the tracking information for your project.</p>
+            <pre><code>Mark@LAPTOP ~/Desktop/Emerging_Tech_Website<br>$ git init<br>Initialized empty Git repository in C:/Users/Mark/Desktop/Emerging_Tech_Website/.git/<br>Mark@LAPTOP ~/Desktop/Emerging_Tech_Website (master)<br>$<br></code></pre>
+        </div>
+        
+         <div class="well well-lg slide">
+            <h2>Step 2:  Check the status of the repository</h2>
+            <ul>
+                <li>Running <code>git status</code> gives you a summary of the repository's state, including the current branch, the current commit, and listings of uncommitted files that are either in the <mark>staging environment</mark> or untracked altogether.</li>
+                <li>The staging environment is where you can find files that are tracked by Git but not committed.  The staging environment can seem unnecessary, but it's useful in certain scenarios, which I won't go into. </li>               
+            </ul>
+            <pre><code>Mark@LAPTOP ~/Desktop/Emerging_Tech_Website<br>$ git status<br>On branch master<br>Initial commit<br><br>Untracked files:<br>  (use "git add <file>..." to include in what will be committed)<br><br>        css/<br>        fonts/<br>        img/<br>        index.html<br>        js/<br><br>nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+        </div>
+             
+         <div class="well well-lg slide">
+            <h2>Step 3:  Make the first commit</h2>
+            <ol>
+                <li>Run <code>git add css fonts img index.html js</code> to add all files to the staging environment.</li>
+                <li>Run <code>git commit -m "Add partially-complete files for website"</code> to commit the files and associate a message with the commit.</li>               
+            </ol>
+        </div>            
+             
+        <div class="well well-lg slide">
+            <h2>Step 4:  Create a repository on Github</h2>
+            <ol>
+                <li>Log in to Github and click the "New" button on your Respositories page.</li>
+                <li>Enter the appropriate information for an existing, public repository.  You should now have an empty repository on Github.</li>
+                <li>Run the following commands:</li>
+                <pre><code>git remote add origin https://github.com/markpratt/Emerging_Tech_Website.git<br>git push -u origin master</code></pre>
+                <p>The first command marks the given URL as a remote repository and gives it the alias "origin".  The second command pushes the commits from the local branch named "master" to the remote.</p>
+            </ol>
+        </div>             
+        
+        <div class="well well-lg slide">
+            <h2>Resources</h2>
+            <ul>
+                <li>Team Treehouse has a “Git Basics” as well as a “Github Basics” course!</li>
+                <li>Git/Github are very popular, so Google will point you to many good sources.  Some of the ones I used are <a href="http://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">this tutorial</a>, <a href="https://guides.github.com/activities/hello-world/">this guide</a>, and <a href="https://help.github.com/articles/good-resources-for-learning-git-and-github/">this list</a> curated by Github users.</li>
+                <li>For a more comprehensive reference, here’s a <a href="https://git-scm.com/book/en/v2">book</a></li>
+            </ul>
+        </div>
+
+    </body>
+</html>
